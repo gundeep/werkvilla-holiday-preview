@@ -146,6 +146,17 @@ figcaption { margin-top: 8px; font-size: 14px; color: var(--muted); }
 }
 .hint { font-size: 13px; color: var(--muted); margin: 0 0 4px; }
 
+/* Before/after pair: stacked on a phone, side by side on a wider screen. */
+.compare { display: grid; gap: 22px; margin-top: 10px; }
+.compare figure { max-width: 330px; width: 100%; margin-inline: auto; }
+.compare figcaption { margin: 0 0 8px; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+.phone.detail { max-width: 420px; margin-top: 10px; }
+
+.points { margin: 0; padding: 16px 18px 16px 38px; background: var(--ivory); border: 1px solid var(--line); border-radius: var(--radius); }
+.points li { margin: 0 0 8px; color: var(--muted); }
+.points li:last-child { margin-bottom: 0; }
+.points b { color: var(--ink); font-weight: 600; }
+
 .iconrow { display: flex; flex-wrap: wrap; gap: 16px; }
 .tile {
   display: flex;
@@ -194,9 +205,15 @@ footer { margin-top: 36px; font-size: 13px; color: var(--muted); }
 
 @media (min-width: 720px) {
   .wrap { padding: 32px 28px 64px; }
-  .cards { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .compare { grid-template-columns: repeat(2, minmax(0, 330px)); justify-content: start; gap: 28px; }
+  .compare figure { margin-inline: 0; }
   .gallery { overflow: visible; margin: 0; padding: 4px 0 12px; }
   .gallery figure { flex: 0 1 330px; }
+}
+
+@media (min-width: 960px) {
+  .cards { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
